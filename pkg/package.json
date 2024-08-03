@@ -6,7 +6,6 @@
   "author": "Frankie Bagnardi <f.bagnardi@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "xo --fix && jest --coverage",
     "build": "babel src --out-dir lib --ignore src/__tests__",
     "prepublish": "npm run test && npm run build",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
@@ -63,5 +62,5 @@
       "react"
     ]
   },
-  "gitHead": "af3b338d46b96b06d8f99eca4ee55b8627b8b4d7"
+  "gitHead": "2003d7ec488d05d1b23fffced4b8bfb5cbab34a4"
 }
