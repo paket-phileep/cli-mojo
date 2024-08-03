@@ -1,6 +1,6 @@
 {
   "name": "cli-mojo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a customizable progress bar for ink",
   "main": "lib/index.js",
   "author": "Frankie Bagnardi <f.bagnardi@gmail.com>",
