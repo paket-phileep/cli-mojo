@@ -1,13 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import blacklist from 'blacklist';
-import {Text} from 'ink';
+import React from "react";
+import PropTypes from "prop-types";
+import blacklist from "blacklist";
+import { Text } from "ink";
 
-const BLACKLIST_PROPS = ['percent', 'left', 'right', 'columns', 'character', 'rightPad'];
+const BLACKLIST_PROPS = [
+  "percent",
+  "left",
+  "right",
+  "columns",
+  "character",
+  "rightPad"
+];
 
-class Bar extends React.Component {
+class Title extends React.Component {
   getString() {
-    const {percent, columns, left, right, character, rightPad} = this.props;
+    const { percent, columns, left, right, character, rightPad } = this.props;
 
     const screen = columns || process.stdout.columns || 80;
     const space = screen - right - left;
@@ -18,29 +25,25 @@ class Bar extends React.Component {
       return chars;
     }
 
-    return chars + ' '.repeat(space - max);
+    return chars + " ".repeat(space - max);
   }
 
   render() {
     const props = blacklist(this.props, BLACKLIST_PROPS);
-    return (
-      <Text {...props}>
-        {this.getString()}
-      </Text>
-    );
+    return <Text {...props}>{this.getString()}</Text>;
   }
 }
 
-Bar.defaultProps = {
+Title.defaultProps = {
   columns: 0,
   percent: 1,
   left: 0,
   right: 0,
-  character: '█',
+  character: "█",
   rightPad: false
 };
 
-Bar.propTypes = {
+Title.propTypes = {
   columns: PropTypes.number,
   percent: PropTypes.number,
   left: PropTypes.number,
@@ -49,4 +52,4 @@ Bar.propTypes = {
   rightPad: PropTypes.bool
 };
 
-export default Bar;
+export default Title;
