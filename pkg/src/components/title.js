@@ -1,36 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import blacklist from "blacklist";
-import { Text } from "ink";
-
-const BLACKLIST_PROPS = [
-  "percent",
-  "left",
-  "right",
-  "columns",
-  "character",
-  "rightPad"
-];
+import Gradient from "ink-gradient";
+import BigText from "ink-big-text";
+const BLACKLIST_PROPS = ["text"];
 
 class Title extends React.Component {
-  getString() {
-    const { percent, columns, left, right, character, rightPad } = this.props;
-
-    const screen = columns || process.stdout.columns || 80;
-    const space = screen - right - left;
-    const max = Math.min(Math.floor(space * percent), space);
-    const chars = character.repeat(max);
-
-    if (!rightPad) {
-      return chars;
-    }
-
-    return chars + " ".repeat(space - max);
-  }
-
   render() {
     const props = blacklist(this.props, BLACKLIST_PROPS);
-    return <Text {...props}>{this.getString()}</Text>;
+    return (
+      <Gradient name="blue">
+        <BigText text={props.text ?? "paket phileep"} />
+      </Gradient>
+    );
   }
 }
 
