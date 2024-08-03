@@ -3200,9 +3200,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-mojo@workspace:cli":
+"cli-mojo@workspace:pkg":
   version: 0.0.0-use.local
-  resolution: "cli-mojo@workspace:cli"
+  resolution: "cli-mojo@workspace:pkg"
   dependencies:
     "@babel/cli": "npm:^7.1.2"
     "@babel/core": "npm:^7.1.2"
