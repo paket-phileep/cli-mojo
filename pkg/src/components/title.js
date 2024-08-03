@@ -1,16 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import blacklist from "blacklist";
 import Gradient from "ink-gradient";
 import BigText from "ink-big-text";
-const BLACKLIST_PROPS = ["text"];
 
 class Title extends React.Component {
   render() {
-    const props = blacklist(this.props, BLACKLIST_PROPS);
-    const text = props.text ?? "paket phileep";
+    const { text, color } = this.props;
     return (
-      <Gradient name="blue">
+      <Gradient name={color}>
         <BigText text={text} />
       </Gradient>
     );
@@ -18,21 +15,13 @@ class Title extends React.Component {
 }
 
 Title.defaultProps = {
-  columns: 0,
-  percent: 1,
-  left: 0,
-  right: 0,
-  character: "█",
-  rightPad: false
+  color: "blue",
+  text: "paket phileep" // Define default text prop
 };
 
 Title.propTypes = {
-  columns: PropTypes.number,
-  percent: PropTypes.number,
-  left: PropTypes.number,
-  right: PropTypes.number,
-  character: PropTypes.string,
-  rightPad: PropTypes.bool
+  color: PropTypes.string, // Define text prop type
+  text: PropTypes.string
 };
 
 export default Title;
