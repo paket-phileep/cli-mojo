@@ -60,5 +60,6 @@
     "plugins": [
       "react"
     ]
-  }
+  },
+  "gitHead": "ac60c8ff9cb84be70c7a51de1823ec61813bbbd3"
 }

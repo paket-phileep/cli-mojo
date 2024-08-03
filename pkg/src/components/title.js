@@ -8,9 +8,10 @@ const BLACKLIST_PROPS = ["text"];
 class Title extends React.Component {
   render() {
     const props = blacklist(this.props, BLACKLIST_PROPS);
+    const text = props.text ?? "paket phileep";
     return (
       <Gradient name="blue">
-        <BigText text={props.text ?? "paket phileep"} />
+        <BigText text={text} />
       </Gradient>
     );
   }
