@@ -16,6 +16,8 @@
   ],
   "dependencies": {
     "blacklist": "^1.1.4",
+    "ink-big-text": "^2.0.0",
+    "ink-gradient": "^3.0.0",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
